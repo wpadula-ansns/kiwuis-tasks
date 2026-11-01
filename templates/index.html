@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laboratorium 1</title>
+  <title>Laboratorium 2</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <main class="card">
     <p class="eyebrow">Konteneryzacja i wirtualizacja</p>
-    <h1>Laboratorium 1</h1>
+    <h1>Laboratorium 2</h1>
     {{if .Album}}
     <p class="label">Numer albumu</p>
     <p class="album">{{.Album}}</p>
     {{else}}
-    <p class="warning">Ustaw zmienną <code>NUMER_ALBUMU</code> w pliku <code>.env</code> i uruchom kontener ponownie.</p>
+    <p class="warning">Ustaw zmienną <code>NUMER_ALBUMU</code> instrukcją <code>ENV</code> w pliku <code>Dockerfile</code> i zbuduj obraz ponownie.</p>
     {{end}}
-    <p class="meta">Kontener: <code>{{.Hostname}}</code></p>
+    <p class="label">System bazowy obrazu</p>
+    <p class="system">{{.System}}</p>
+    <p class="meta">Kontener: <code>{{.Hostname}}</code>, port: <code>{{.Port}}</code></p>
   </main>
 </body>
 </html>

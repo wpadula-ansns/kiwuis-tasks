@@ -62,6 +62,12 @@ h1 {
   color: var(--muted);
 }
 
+.system {
+  margin: 4px 0 32px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
 .album {
   margin: 4px 0 32px;
   color: var(--accent);
