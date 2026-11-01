@@ -2,6 +2,7 @@
 .git
 .env
 Dockerfile
+compose.yaml
 .dockerignore
 *.md
 vscode-volume

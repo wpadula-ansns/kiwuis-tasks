@@ -8,7 +8,7 @@ The `main` branch holds only shared information. Each laboratory lives on its ow
 | Branch | Laboratory |
 | --- | --- |
 | `lab-01` | L01: first containerised application (Go web server) |
-| `lab-02` | L02: creating and managing containers (broken `Dockerfile` skeleton to fix, `.dockerignore`, `vscode-volume` for bind mounts) |
+| `lab-02` | L02: creating and managing containers (broken `Dockerfile` skeleton to fix, `.dockerignore`, `compose.yaml` with a commented `environment` key, `vscode-volume` for bind mounts) |
 
 ## Requirements
 
