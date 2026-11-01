@@ -1,29 +1,29 @@
 # kiw-lab-tasks
 
-Laboratory tasks for the containerization and virtualization course: `main` holds shared information, and each of the 6 labs lives on its own feature branch.
+Laboratory tasks for the containerization and virtualization course.
+The `main` branch holds only shared information. Each laboratory lives on its own branch, so switch to it before you start.
 
-## Repository structure
+## Branches
 
-- `main` branch: shared information (README, setup, conventions).
-- Feature branches `lab-01` … `lab-06`: one per laboratory.
-- `src/`: Go code.
-- `docker/`: Dockerfiles, Compose files, VM/infra config.
-- `docs/`: Typst reports and lab instructions.
-- `data/`: datasets and outputs.
-
-## Requirements
-
-- Go
-- Typst
-- Docker / container runtime
+| Branch | Laboratory |
+| --- | --- |
+| `lab-01` | L01: first containerised application (Go web server) |
 
 ## Getting started
 
-<!-- Replace with real steps: clone, install, build, run. -->
+```bash
+git clone https://github.com/storm-legacy/kiwuis-labs.git
+cd kiwuis-labs
+git switch lab-01
+```
+
+Switching with uncommitted changes:
 
 ```bash
-git clone <repository-url>
-cd kiw-lab-tasks
+git stash push -u   # save changes, including new files
+git switch lab-02
+git switch lab-01
+git stash pop       # restore saved changes
 ```
 
 ## Contributing
