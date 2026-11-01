@@ -26,4 +26,4 @@ Use Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `test
 
 ## License
 
-By contributing, you agree that your contributions are licensed under the same terms as the project. Code is licensed under MIT (see LICENSE-CODE), content under CC BY 4.0 (see LICENSE-CONTENT).
+By contributing, you agree that your contributions are licensed under the same terms as the project. The project is licensed under MIT (see LICENSE).

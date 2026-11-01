@@ -32,4 +32,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-Code is licensed under MIT (see LICENSE-CODE), content under CC BY 4.0 (see LICENSE-CONTENT).
+MIT, see [LICENSE](LICENSE).
