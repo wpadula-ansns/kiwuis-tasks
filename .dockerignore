@@ -1,4 +1,7 @@
+# Pliki pomijane w kontekście budowania, więc COPY . . ich nie kopiuje
 .git
 .env
+Dockerfile
+.dockerignore
 *.md
-LICENSE
+vscode-volume

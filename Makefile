@@ -1,7 +1,6 @@
-.PHONY: help run build fmt vet check image up down logs clean
+.PHONY: help run build fmt vet check clean
 
 APP := bin/app
-NAME := kiwuis-labs
 
 help: ## Show available targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  %-8s %s\n", $$1, $$2}'
@@ -21,20 +20,5 @@ vet: ## Run go vet
 check: vet ## Fail if code is not formatted
 	@test -z "$$(gofmt -l .)" || (gofmt -l .; exit 1)
 
-image: ## Build the container image
-	docker build -t $(NAME) .
-
-up: .env image ## Build the image and start the container
-	docker run -d --name $(NAME) -p 8080:8080 --env-file .env $(NAME)
-
-down: ## Stop and remove the container
-	docker rm -f $(NAME)
-
-logs: ## Follow container logs
-	docker logs -f $(NAME)
-
 clean: ## Remove build output
 	rm -rf bin
-
-.env:
-	cp .env.example .env

@@ -1,9 +1,13 @@
-FROM golang:1.27-alpine AS build
+# Etap deweloperski: kompilator Go i kod źródłowy
+FROM golang:1.27 AS dev
 WORKDIR /src
-COPY . .
-RUN CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /out/app .
+# Program bez bibliotek systemowych, uruchomi się na każdym obrazie bazowym
+ENV CGO_ENABLED=0
+RUN go build -o /out/app .
+CMD ["go", "run", "."]
 
-FROM gcr.io/distroless/static-debian12:nonroot
-COPY --from=build /out/app /app
+# Etap końcowy: tylko skompilowany program
+FROM ubuntu:26.04
+COPY --from=dev /app /app
 EXPOSE 8080
-ENTRYPOINT ["/app"]
+CMD ["/app"]

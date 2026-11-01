@@ -8,6 +8,7 @@ The `main` branch holds only shared information. Each laboratory lives on its ow
 | Branch | Laboratory |
 | --- | --- |
 | `lab-01` | L01: first containerised application (Go web server) |
+| `lab-02` | L02: creating and managing containers (broken `Dockerfile` skeleton to fix, `.dockerignore`, `vscode-volume` for bind mounts) |
 
 ## Requirements
 
@@ -19,21 +20,18 @@ The `main` branch holds only shared information. Each laboratory lives on its ow
 | `make` (optional) | GNU Make 4+ | shortcuts from `Makefile` |
 
 Go is needed only to run the app outside a container: `mise install`, then `make run`.
-The container build uses the `golang:1.25-alpine` image, so Docker alone is enough.
 
 ## Getting started
 
 ```bash
 git clone https://github.com/storm-legacy/kiwuis-labs.git
 cd kiwuis-labs
-git switch lab-01
-cp .env.example .env   # set NUMER_ALBUMU
-docker build -t kiwuis-labs .
-docker run -d --name kiwuis-labs -p 8080:8080 --env-file .env kiwuis-labs
-# or: make up
+git switch lab-02
 ```
 
-Open http://localhost:8080.
+The `Dockerfile` is a broken skeleton that you fix step by step during the laboratory.
+The `vscode-volume` directory is mounted into the `code-server` container in the storage chapter.
+The app takes one argument: `serve` (default, web server on `PORT`), `info` (prints the album number, base system and port) or `healthcheck` (exit code 0 when the server answers `/healthz`).
 
 Switching with uncommitted changes:
 
