@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laboratorium 1</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Konteneryzacja i wirtualizacja</p>
+    <h1>Laboratorium 1</h1>
+    {{if .Album}}
+    <p class="label">Numer albumu</p>
+    <p class="album">{{.Album}}</p>
+    {{else}}
+    <p class="warning">Ustaw zmienną <code>NUMER_ALBUMU</code> w pliku <code>.env</code> i uruchom kontener ponownie.</p>
+    {{end}}
+    <p class="meta">Kontener: <code>{{.Hostname}}</code></p>
+  </main>
+</body>
+</html>
