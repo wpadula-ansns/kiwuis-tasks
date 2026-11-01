@@ -14,7 +14,7 @@ The `main` branch holds only shared information. Each laboratory lives on its ow
 | Tool | Version | Used for |
 | --- | --- | --- |
 | `git` | 2.23+ (`git switch`) | cloning and switching branches |
-| Docker with Compose v2 | Docker Desktop with WSL 2 integration, or Docker Engine 24+ | building and running containers |
+| Docker | Docker Desktop with WSL 2 integration, or Docker Engine 24+ | building and running containers |
 | `mise` (optional) | latest | installs the Go version pinned in `mise.toml` (Go 1.25.11) |
 | `make` (optional) | GNU Make 4+ | shortcuts from `Makefile` |
 
@@ -28,7 +28,9 @@ git clone https://github.com/storm-legacy/kiwuis-labs.git
 cd kiwuis-labs
 git switch lab-01
 cp .env.example .env   # set NUMER_ALBUMU
-make up                # or: docker compose up -d --build
+docker build -t kiwuis-labs .
+docker run -d --name kiwuis-labs -p 8080:8080 --env-file .env kiwuis-labs
+# or: make up
 ```
 
 Open http://localhost:8080.
